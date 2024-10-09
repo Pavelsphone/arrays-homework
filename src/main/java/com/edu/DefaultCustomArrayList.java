@@ -3,7 +3,7 @@ package com.edu;
 import java.util.Iterator;
 
 public class DefaultCustomArrayList<E> implements CustomArrayList<E> {
-
+private ArrayList<E> list;
     public DefaultCustomArrayList() {
         ArrayList<Integer> list = new ArrayList<>();
         list.add(1);
@@ -20,12 +20,12 @@ public class DefaultCustomArrayList<E> implements CustomArrayList<E> {
     
     @Override
     public boolean add(E element) {
-        return true;
+        return list.add(element);
     }
 
     @Override
     public boolean remove(E element) {
-        return false;
+        return list.remove(element);
     }
 
     private void remove(int index) {
@@ -33,30 +33,31 @@ public class DefaultCustomArrayList<E> implements CustomArrayList<E> {
 
     @Override
     public E get(int index) {
-        return null;
+        return list.get(index);
     }
 
     @Override
     public int size() {
-        return 0;
+       return list.size();
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return list.isEmpty();
     }
 
     @Override
     public void clear() {
+        list.clear();
     }
 
     @Override
     public boolean contains(E element) {
-        return false;
+        return list.contains(element);
     }
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        return list.iterator();
     }
 }
